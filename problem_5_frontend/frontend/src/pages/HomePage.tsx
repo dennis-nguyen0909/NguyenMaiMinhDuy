@@ -7,7 +7,6 @@ import {
   Input,
   Space,
   Popconfirm,
-  message,
   Spin,
   Select,
 } from "antd";
@@ -15,7 +14,6 @@ import { PlusOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { ProductServiceApi } from "../api/modules/ProductService";
 import { Meta, Product } from "../types";
-import { AuthServieApi } from "../api/modules/AuthService";
 import { UserServiceApi } from "../api/modules/UserService";
 import { handleDecoded } from "../utils";
 import { useDispatch, useSelector } from "react-redux";
@@ -253,10 +251,10 @@ export default function HomePage() {
           value={priceFilter}
           onChange={handlePriceFilterChange}
           style={{ width: "20%" }}
-          placeholder="Chọn giá"
+          placeholder="Select price"
         >
-          <Option value="highest">Giá cao nhất</Option>
-          <Option value="lowest">Giá thấp nhất</Option>
+          <Option value="highest">Highest</Option>
+          <Option value="lowest">Lowest</Option>
         </Select>
         <div className="flex flex-col gap-2">
           <Button
